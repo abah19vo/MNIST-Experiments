@@ -94,7 +94,7 @@ def non_convolutional_model():
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.9),
+                  optimizer=K.optimizers.SGD(lr=0.2),
                   metrics=["accuracy"],)
     return model
 
@@ -110,7 +110,7 @@ def convolutional_model():
     model.add(K.layers.Dense(10, activation="softmax"))
 
     model.compile(loss="categorical_crossentropy",
-                  optimizer=K.optimizers.SGD(lr=0.9),
+                  optimizer=K.optimizers.SGD(lr=0.2),
                   metrics=["accuracy"])
     return model
 
@@ -124,11 +124,11 @@ model = non_convolutional_model()
 
 # Träna modellen
 model.fit(x_train, y_train,
-          epochs=50,
+          epochs=100,
           validation_split=0.2,
           batch_size=256,
           verbose=1,
-          callbacks=[tb_callback]
+          callbacks=[tb_callback],
           )
 
 
