@@ -3,13 +3,14 @@
 ## Table of Frågor
 - [A](#qa)
 - [B](#qb)
+- [C](#qc)
 ---
 ## Q(a)
 ```
 Går det snabbare att träna nätverken (i antalet epoker) om vi ökar inlärningshastigheten (lr) på nätverken?
 Kan vi ha en för stor inlärningshastighet och vad händer då?
 ```
-## A(a)
+## Answer
 ```
 Med en snabb inlärningstakt är det lättare att träna upp nätverken, men det finns risk att ta för många enorma steg, vilket minskar noggrannheten. Som ett resultat tar det längre tid att få en lika exakt modell.
 
@@ -27,7 +28,7 @@ Den roterade datan följde kurvan i figur 1, dock gjorde inte den förflyttade d
 ```
 Vad händer om vi minskar storleken på våra träningsbatcher (batch_size)? Hur ändras prestandarden och träningstiden?
 ```
-## A(b)
+## Answer
 ```
 Vi märkte att modellen försämrades med tiden när batch_size = 6. Vi kom till slutsatsen att eftersom det finns nio (9) olika nummer och en batch_size på 9, kommer modellen inte att behöva träna på alla innan den uppdaterar sin vikter.
 När varje (ofullständig) batch försöker uppdatera med stora steg, höjdes detta till allvarliga nivåer med lr = 0,7.
@@ -45,4 +46,16 @@ Men när det gäller det gäller snabbheten så såg vi att en batch med size p�
 ---
 
 
+## Q(c)
+```
+Hur skiljer de båda modellerna(Convolutional & non-convolutional) sig när det kommer till träningstid? Förklara lite kort om 
+varför de skiljer sig åt.
+```
+## Answer
+```
+En convolutional är betydligt bättre på att överföra data eftersom det inte spelar någon roll var numret finns i bilden. 
+Medan en icke faltningsmodell är bra på att lokalisera numret beroende på var pixlarna finns i bilden.
+Eftersom convolutional delar upp bilden i mindre bilder som validerar, har faltning visat sig vara långsammare men mer exakt. Stegen är också sammanflätade. Istället för att röra sig direkt genom bilden, vilket är betydligt snabbare. 
+```
 
+## 
