@@ -2,7 +2,8 @@
 
 ## Table of Frågor
 - [A](#qa)
-
+- [B](#qb)
+---
 ## Q(a)
 ```
 Går det snabbare att träna nätverken (i antalet epoker) om vi ökar inlärningshastigheten (lr) på nätverken?
@@ -20,4 +21,28 @@ Den roterade datan följde kurvan i figur 1, dock gjorde inte den förflyttade d
 ![figur 1](/img/fig1.svg)
 
 
-      
+---
+
+## Q(b)
+```
+Vad händer om vi minskar storleken på våra träningsbatcher (batch_size)? Hur ändras prestandarden och träningstiden?
+```
+## A(b)
+```
+Vi märkte att modellen försämrades med tiden när batch_size = 6. Vi kom till slutsatsen att eftersom det finns nio (9) olika nummer och en batch_size på 9, kommer modellen inte att behöva träna på alla innan den uppdaterar sin vikter.
+När varje (ofullständig) batch försöker uppdatera med stora steg, höjdes detta till allvarliga nivåer med lr = 0,7.
+
+Efter att ha observerat med batch_size = 6 så experimenterade vi med batch_size = 45. 
+
+Vi trodde att med en batch_size på 9 så skulle det finnas en större chans att få tag i varje siffra i varje batch och arbeta med dem innan uppdateringen av modellen sker.
+Vår teori var helt rätt, modellen visar högre accurecy än storleken 6. Se figur 2.
+
+Men när det gäller det gäller snabbheten så såg vi att en batch med size på 70 var snabbare än en modell med 140 då man kan se att den uppdaterar modellen mer ofta. När vi körde batch_size = 6 så tog det väldigt lång tid gämfört med batch_size = 45 det är på av att modellen behöver uppdatera sig aldeless för mycket och att det håller på inte att kunna träna alla innan den innan den uppdaterar sina vikter.
+
+```
+![batch size accuracies](/img/fig2.svg)
+(figure 2)
+---
+
+
+
