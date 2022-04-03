@@ -1,9 +1,6 @@
 
 
-## Table of Frågor
-- [A](#qa)
-- [B](#qb)
-- [C](#qc)
+
 ---
 ## Q(a)
 ```
@@ -58,4 +55,34 @@ Medan en icke faltningsmodell är bra på att lokalisera numret beroende på var
 Eftersom convolutional delar upp bilden i mindre bilder som validerar, har faltning visat sig vara långsammare men mer exakt. Stegen är också sammanflätade. Istället för att röra sig direkt genom bilden, vilket är betydligt snabbare. 
 ```
 
-## 
+---
+
+## Q(d)
+```
+Hur skiljer sig resultatet mellan de olika testseten och varför kan vi se/inte se en skillnad?
+Är det samma skillnader för båda närverken?
+```
+## Answer
+```
+convo = convolutional model
+non_convo = non convolutional model
+Moved Data:
+Det finns en tydlig skillnad mellan convo och non convo. Convo har en högre noggrannhet, vilket vi tror beror på att den inte förlitar sig mycket på positionsförhållandet mellan pixlarna i hela bilden. Den fokuserar på att upptäcka mönster som pixlar oavsett var de befinner sig. 
+Detta möjliggörs av de flera "träningspass" som talaren utför på olika delar av bilderna under sin träning.
+Non convo, å andra sidan, utför ett "pass" där varje pixel tilldelas en neuron. Detta innebär att modellen åter bekantar sig med mönster i sammanhanget "den stora bilden". Som ett resultat, om siffrorna i bilden flyttas, blir det svårt att matcha pixlarna i förhållande till hela bilden och hitta rätt antal.
+```
+![Moved Data: non-convolutional](/img/fig3.png)(non-convolutional)
+![Moved Data: convolutional](/img/fig4.png)(convolutional)
+
+```
+Rotated Data:
+I den här situationen är nätverket väldigt likt. Siffrorna flyttas inte, därför förblir deras position i den övergripande bilden oförändrad. Behåll ett distinkt mönster för varje siffra, även om de alla är roterade.
+```
+![Rotated Data: non-convolutional](/img/fig5.png)(non-convolutional)
+![Rotated Data: convolutional](/img/fig6.png)(convolutional)
+
+---
+
+```
+
+
