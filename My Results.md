@@ -82,7 +82,27 @@ I den här situationen är nätverket väldigt likt. Siffrorna flyttas inte, dä
 ![Rotated Data: convolutional](/img/fig6.png)(convolutional)
 
 ---
-
+## Q(e)
 ```
+Vad händer om vi ökar antalet neuroner. Får vi ett bättre eller sämre resultat. Finns det 
+någon undre eller övre gräns för vad som är bäst?
+```
+## Answer
+```
+Ju mer nueroner det finns i ett lager desto bättre blir accuracy men kosekvenserna ligger i tiden.
+
+Resultat av Average Accuracy av olika neuroner:
+     - 4 neuroner: 84 (23s)
+     - 8 neuroner: 93 (20s)
+     - 16 neuroner: 100 (23s)
+     - 32 neuroner: 103.19 (24s)
+     - 64 neuroner: 103.69 (25s)
+     - 512 neuroner: 110.99 (1m )
+     - 1024 neuroner: 110.99 (2m 20s)
+
+
+
+
+
 
 
