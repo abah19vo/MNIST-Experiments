@@ -99,6 +99,23 @@ Resultat av Average Accuracy av olika neuroner:
      - 64 neuroner: 103.69 (25s)
      - 512 neuroner: 110.99 (1m )
      - 1024 neuroner: 110.99 (2m 20s)
+```
+---
+
+## Q(f)
+```
+Öka området som analyseras åt gången med vårt ”convolutional neural network” (detta 
+görs genom att öka värdet på vår kernel_size) och öka även storleken på stegen mellan 
+varje yta som analyseras ” (detta görs genom att öka värdet på strides). Hur stora värden 
+går det att ha på dessa parametrar innan prestandan börjar att sjunka. Vilka var de bästa 
+värdena som du observerade? 
+```
+## A(f)
+```
+ kernel_size = (16, 16) är vårt första test istället för kernel_size = (8,8) . Eftersom rutnätinmatningen till neuronerna är 16x16 snarare än 8x8, minskar noggrannheten när mönstren blir bredare och matchar med fler siffror.
+
+ 
+```
 
 
 

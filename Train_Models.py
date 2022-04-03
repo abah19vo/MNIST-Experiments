@@ -104,7 +104,9 @@ def convolutional_model():
     model = K.Sequential()
     model.add(K.layers.Input((28, 28, 1)))
     model.add(K.layers.Conv2D(16, kernel_size=(
-        8, 8), strides=(1, 1), activation="relu"))
+        16, 16),
+        strides=(1, 1),
+        activation="relu"))
     model.add(K.layers.MaxPooling2D())
     model.add(K.layers.Flatten())
     model.add(K.layers.Dense(10, activation="softmax"))
