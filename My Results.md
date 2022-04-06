@@ -114,10 +114,9 @@ värdena som du observerade?
 ```
 kernel_size = (16, 16) strides=(1, 1) är vårt första test istället för kernel_size = (8,8) . Eftersom rutnätinmatningen till neuronerna är 16x16 snarare än 8x8, minskar noggrannheten när mönstren blir bredare och matchar med fler siffror.
 
-kernel_size=(8, 8) med strides=(3, 3) är vårt andra försök. Accuracyn minskade med bara 1% och tiden gick sänktes med 60%.
+kernel_size=(8, 8) med strides=(3, 3) är vårt andra försök. Accuracyn minskade med bara 1% och tiden sänktes med 60%.
 
-
-
+kernel_size=(8, 8) med strides=(8, 8) är vårt tredje försök. det var chockande att hitta ett dramatiskt lågt accrucy värde.
  
 ```
 
