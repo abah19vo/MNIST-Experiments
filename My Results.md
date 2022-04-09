@@ -139,8 +139,32 @@ precisionen och träningstiden?
 
 ---
 
+- vi testade sen med convolutional_model:
+
+| layers      | time (min:sec)    | accrucy rotated     | accrucy moved|
+| ----------- | ----------- | ----------- | ----------- |
+| 1    | 2:20 |  46.7   | 17.96  |
+| 4    | 2:20 |  56.49  | 20.23  |
+| 8    | 2:20 |  54.55  | 18.63  |
+| 12   | 2:20 |  51.51  | 18.34  |
+
+```
+Slutsats:
+På non-cono så ökade tiden kraftigt med antalet lager men det betyder inte att det gick så bra för epoch accurucy. Men shockande i vanliga convo så ändrades inte tiden men däremot så ökade accurucien till en viss grad sen började den sänka sig efter direkt efter fyra och 8 lager
+     
+```
+---
 
 
+# Egna Experment
+```
+Kör minst 5 st egna experiment med syftet att uppnå så bra precision på de tre olika testdataseten. 
+Som ett sekundärt mål så ska det också gå så snabbt (mätt i sekunder) att träna nätverket. Använd 
+det du har observerat under dina experiment i uppgift 7 för att skapa en så bra modell som möjligt. 
+För varje experiment så ska du ge en kort beskrivning av vad det är du testar och varför du valde 
+att testa just den givna parameterinställningen. 
+```
+## Experement 1
 
 
 
