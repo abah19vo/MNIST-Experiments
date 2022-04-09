@@ -120,6 +120,25 @@ kernel_size=(8, 8) med strides=(8, 8) är vårt tredje försök. det var chockan
  
 ```
 
+## Q(g)
+```
+Lägg till fler lager och testa om det blir bättre med djupare nätverk. Hur påverkas 
+precisionen och träningstiden?
+```
+## A(g)
+
+- testade först med non_convolutional_model:
+
+| layers      | time (min:sec)    | accrucy rotated     | accrucy moved|
+| ----------- | ----------- | ----------- | ----------- |
+| 1    | 2:10 |  79.27  | 16.39  |
+| 4    | 2:37 |  72.8   | 14.58  |
+| 16   | 3:23 |  11.35  | 11.35  |
+| 23   | 6:18 |  9.79   | 11.35  |
+
+
+---
+
 
 
 
