@@ -64,12 +64,10 @@ Hur skiljer sig resultatet mellan de olika testseten och varför kan vi se/inte 
 ```
 ## Answer
 ```
-convo = convolutional model
-non_convo = non convolutional model
 Moved Data:
-Det finns en tydlig skillnad mellan convo och non convo. Convo har en högre noggrannhet, vilket vi tror beror på att den inte förlitar sig mycket på positionsförhållandet mellan pixlarna i hela bilden. Den fokuserar på att upptäcka mönster som pixlar oavsett var de befinner sig. 
+Det finns en tydlig skillnad mellan convolutional model och non convolutional model. convolutional model har en högre noggrannhet, vilket vi tror beror på att den inte förlitar sig mycket på positionsförhållandet mellan pixlarna i hela bilden. Den fokuserar på att upptäcka mönster som pixlar oavsett var de befinner sig. 
 Detta möjliggörs av de flera "träningspass" som talaren utför på olika delar av bilderna under sin träning.
-Non convo, å andra sidan, utför ett "pass" där varje pixel tilldelas en neuron. Detta innebär att modellen åter bekantar sig med mönster i sammanhanget "den stora bilden". Som ett resultat, om siffrorna i bilden flyttas, blir det svårt att matcha pixlarna i förhållande till hela bilden och hitta rätt antal.
+Non convolutional model, å andra sidan, utför ett "pass" där varje pixel tilldelas en neuron. Detta innebär att modellen åter bekantar sig med mönster i sammanhanget "den stora bilden". Som ett resultat, om siffrorna i bilden flyttas, blir det svårt att matcha pixlarna i förhållande till hela bilden och hitta rätt antal.
 ```
 ![Moved Data: non-convolutional](/img/fig3.png)(non-convolutional) ![Moved Data: convolutional](/img/fig4.png)(convolutional)
 
@@ -150,7 +148,7 @@ precisionen och träningstiden?
 
 ```
 Slutsats:
-På non-cono så ökade tiden kraftigt med antalet lager men det betyder inte att det gick så bra för epoch accurucy. Men shockande i vanliga convo så ändrades inte tiden men däremot så ökade accurucien till en viss grad sen började den sänka sig efter direkt efter fyra och 8 lager
+På non-cono så ökade tiden kraftigt med antalet lager men det betyder inte att det gick så bra för epoch accurucy. Men shockande i vanliga convolutional model så ändrades inte tiden men däremot så ökade accurucien till en viss grad sen började den sänka sig efter direkt efter fyra och 8 lager
      
 ```
 ---
@@ -194,7 +192,7 @@ resultatet var shockande mindre för pga av att jag hade hade lika mycket neuron
 ## Experement 3
 ```
 
-Jag ändrar batchsizen till 9*15 så jag minimerar tiden, samma händer för lr jag ändrar den till 0.5. för att göra det mer intressant jag ändrar antalet neuroner till 640 för att göra expermentet mer intressant och för att se om det kommer att påverka possetivt eller negatitv
+Jag ändrar batchsizen till 9*15 så jag förbättrar tiden, samma händer för lr jag ändrar den till 0.5. för att göra det mer intressant jag ändrar antalet neuroner till 640 för att göra expermentet mer intressant och för att se om det kommer att påverka possetivt eller negatitv
 
 resultatet var bra för time, test data, rotated data men det sänkte väldigt mycket när det gäller moved data. 
 ```
@@ -202,5 +200,30 @@ resultatet var bra för time, test data, rotated data men det sänkte väldigt m
 - moved data: 16.95
 - rotated data: 88.11
 - test data: 98.26
+
+
+## Experement 4
+```
+
+vi änrar modellen till convolutional model för se om det kan förbättra helheten. för att göra det mer intressant jag ändrar antalet neuroner till 28. då jag har strides till 8,8 och strides 1,1
+
+Resutltatet var bra för moved data men inte för resten.
+```
+- time: 4 min, 31sek
+- moved data: 19.14
+- rotated data: 78.18
+- test data: 97.81
+
+## Experement 5
+```
+
+jag sänker antalet neuroner till 16 då jag behåller antalet lager.  jag sätter strides till 12,12 och strides 1,1 och lr 0.5
+
+Resultatet var bra för hela nästan mycket bättre än experment 3 om tiden inte inte var nästan 4 minuter.
+```
+- time: 3 min, 58sek
+- moved data: 20.86
+- rotated data: 88.59
+- test data: 98.52
 
 
