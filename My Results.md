@@ -217,7 +217,7 @@ Resutltatet var bra för moved data men inte för resten.
 ## Experement 5
 ```
 
-jag sänker antalet neuroner till 16 då jag behåller antalet lager.  jag sätter strides till 12,12 och strides 1,1 och lr 0.5
+jag sänker antalet neuroner till 16 för att förbättra tiden då jag behåller antalet lager.  jag sätter strides till 12,12 för att förbättra resultatet och strides 1,1 och lr 0.5
 
 Resultatet var bra för hela nästan mycket bättre än experment 3 om tiden inte inte var nästan 4 minuter.
 ```
