@@ -196,11 +196,11 @@ resultatet var shockande mindre för pga av att jag hade hade lika mycket neuron
 
 Jag ändrar batchsizen till 9*15 så jag minimerar tiden, samma händer för lr jag ändrar den till 0.5. för att göra det mer intressant jag ändrar antalet neuroner till 640 för att göra expermentet mer intressant och för att se om det kommer att påverka possetivt eller negatitv
 
-resultatet var shockande mindre för pga av att jag hade hade lika mycket neuroner men högre batchsize.  resultatet kom bättre från alla håll.
+resultatet var bra för time, test data, rotated data men det sänkte väldigt mycket när det gäller moved data. 
 ```
-- time: 2 min, 47sek
-- moved data: 17.73
-- rotated data: 85.93
-- test data: 97.84
+- time: 2 min, 17sek
+- moved data: 16.95
+- rotated data: 88.11
+- test data: 98.26
 
 
