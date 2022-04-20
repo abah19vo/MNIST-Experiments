@@ -71,8 +71,8 @@ Det finns en tydlig skillnad mellan convo och non convo. Convo har en högre nog
 Detta möjliggörs av de flera "träningspass" som talaren utför på olika delar av bilderna under sin träning.
 Non convo, å andra sidan, utför ett "pass" där varje pixel tilldelas en neuron. Detta innebär att modellen åter bekantar sig med mönster i sammanhanget "den stora bilden". Som ett resultat, om siffrorna i bilden flyttas, blir det svårt att matcha pixlarna i förhållande till hela bilden och hitta rätt antal.
 ```
-![Moved Data: non-convolutional](/img/fig3.png)(non-convolutional)
-![Moved Data: convolutional](/img/fig4.png)(convolutional)
+![Moved Data: non-convolutional](/img/fig3.png)(non-convolutional) ![Moved Data: convolutional](/img/fig4.png)(convolutional)
+
 
 ```
 Rotated Data:
@@ -165,7 +165,42 @@ För varje experiment så ska du ge en kort beskrivning av vad det är du testar
 att testa just den givna parameterinställningen. 
 ```
 ## Experement 1
+```
+
+Testar med mindre epochs nu så jag sänker ner dem från 100 -> 50 
+samt så sänker jag ner batch size till 9*3 för att vi märkte att när batchsizen är delbar med antalet figurer så får vi bättre resultat. 
+Jag kommer kommer att sänka sätta neuroner till 128 i non covo modellen. 
+
+resultatet var shockande för någon orsak
+```     
+- time: 10min, 38sek
+- moved data: 15.73
+- rotated data: 80.2
+- test data:95.87
+
+## Experement 2
+```
+
+Jag ändrar batchsizen till 9*15 så jag minimerar tiden, samma händer för lr jag ändrar den till 0.5
+
+resultatet var shockande mindre för pga av att jag hade hade lika mycket neuroner men högre batchsize.  resultatet kom bättre från alla håll.
+```
+- time: 2 min, 47sek
+- moved data: 17.73
+- rotated data: 85.93
+- test data: 97.84
 
 
+## Experement 3
+```
+
+Jag ändrar batchsizen till 9*15 så jag minimerar tiden, samma händer för lr jag ändrar den till 0.5. för att göra det mer intressant jag ändrar antalet neuroner till 640 för att göra expermentet mer intressant och för att se om det kommer att påverka possetivt eller negatitv
+
+resultatet var shockande mindre för pga av att jag hade hade lika mycket neuroner men högre batchsize.  resultatet kom bättre från alla håll.
+```
+- time: 2 min, 47sek
+- moved data: 17.73
+- rotated data: 85.93
+- test data: 97.84
 
 
